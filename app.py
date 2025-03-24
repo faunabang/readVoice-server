@@ -34,11 +34,11 @@ templates = Jinja2Templates(directory="templates")
 
 # S3 클라이언트 설정
 s3 = boto3.client('s3',
-    endpoint_url=os.getenv('NCP_ENDPOINT'),
+    endpoint_url=os.getenv('NCP_ENDPOINT_URL'),
     aws_access_key_id=os.getenv('NCP_ACCESS_KEY'),
     aws_secret_access_key=os.getenv('NCP_SECRET_KEY')
 )
-BUCKET_NAME = os.getenv('NCP_BUCKET')
+BUCKET_NAME = os.getenv('NCP_BUCKET_NAME')
 
 class AudioURL(BaseModel):
     url: str
