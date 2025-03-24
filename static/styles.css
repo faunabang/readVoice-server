@@ -1,0 +1,124 @@
+:root {
+  --color1: #279023;
+  --color2: #278000;
+}
+
+.gothic-a1-regular {
+  font-family: "Gothic A1", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Gothic A1", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  background-color: var(--color1);
+  color: white;
+  padding: 10px; /* 여백 조정 */
+  text-align: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex; /* 플렉스 박스 활성화 */
+  align-items: center; /* 세로 가운데 정렬 */
+  justify-content: center; /* 가로 가운데 정렬 */
+  gap: 10px; /* 이미지와 텍스트 사이 간격 */
+}
+
+header img {
+  max-height: 60px; /* 이미지 최대 높이 */
+  height: auto; /* 이미지 비율 유지 */
+  width: auto; /* 이미지 비율 유지 */
+}
+
+.box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: auto;
+}
+
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "오늘 방송 내역이 없습니다";
+  display: block;
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color1);
+  border-radius: 50%;
+  left: -20px;
+  top: 10px;
+}
+
+.timeline:has(.timeline-item)::before {
+  content: none; /* 타임라인에 항목이 있으면 메시지 숨김 */
+}
+
+.time {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.content {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+.stt-text {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.ai-summary {
+  margin-bottom: 8px;
+  font-style: italic;
+  color: #555;
+}
+
+.play-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color1);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: var(--color2);
+}
